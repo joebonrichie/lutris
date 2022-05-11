@@ -184,7 +184,7 @@ system_options = [  # pylint: disable=invalid-name
         "label": _("Enable gamescope"),
         "default": False,
         "advanced": True,
-        "condition": bool(system.find_executable("gamescope")) and not drivers.is_nvidia(),
+        "condition": bool(system.find_executable("gamescope")) and linux.LINUX_SYSTEM.nvidia_gamescope_support(),
         "help": _("Use gamescope to draw the game window isolated from your desktop.\n"
                   "Use Ctrl+Super+F to toggle fullscreen"),
     },
